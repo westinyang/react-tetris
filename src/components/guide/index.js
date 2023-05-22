@@ -1,5 +1,5 @@
 import React from 'react';
-import QRCode from 'qrcode';
+// import QRCode from 'qrcode';
 import style from './index.less';
 import { transform, i18n, lan } from '../../unit/const';
 import { isMobile } from '../../unit';
@@ -17,8 +17,9 @@ export default class Guide extends React.Component {
     if (this.state.isMobile) {
       return;
     }
-    QRCode.toDataURL(location.href, { margin: 1 })
-        .then(dataUrl => this.setState({ QRCode: dataUrl }));
+    // QRCode组件与js压缩组件不兼容，暂时注释掉
+    // QRCode.toDataURL(location.href, { margin: 1 })
+    //     .then(dataUrl => this.setState({ QRCode: dataUrl }));
   }
   shouldComponentUpdate(state) {
     if (state.QRCode === this.state.QRCode) {
